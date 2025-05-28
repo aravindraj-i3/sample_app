@@ -1,0 +1,12 @@
+<% if @user.errors.any? %>
+<div id="error_explanation"> <%# FIX: id="error_explanation" (no space after =) %>
+  <div class="alert alert-danger"> <%# FIX: class="alert alert-danger" (no space after =) %>
+    The form contains <%= pluralize(@user.errors.count, "error") %> . <%# FIX: Spacing for pluralize and @user.errors.count %>
+  </div>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %> <%# FIX: Spacing for @user.errors... and |msg| %>
+      <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

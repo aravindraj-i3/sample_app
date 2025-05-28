@@ -1,3 +1,5 @@
+# app/controllers/static_pages_controller.rb
+
 class StaticPagesController < ApplicationController
   def home
   end
@@ -6,6 +8,9 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+  end
+
+  def contact # <--- ADD THIS ACTION
   end
 
 end

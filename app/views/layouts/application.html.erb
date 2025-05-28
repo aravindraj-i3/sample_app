@@ -11,14 +11,18 @@
 
     </head>
   <body>
-    <%# --- HEADER PARTIAL INCLUSION --- %>
     <%= render 'layouts/header' %>
 
     <div class="container">
+      <%# --- ADD THESE LINES TO DISPLAY FLASH MESSAGES --- %>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"> <%= message %> </div>
+      <% end %>
+      <%# --- END FLASH MESSAGE DISPLAY --- %>
+
       <%= yield %>
     </div>
 
-    <%# --- FOOTER PARTIAL INCLUSION --- %>
     <%= render 'layouts/footer' %>
 
   </body>
