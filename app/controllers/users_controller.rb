@@ -13,18 +13,19 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
-
+      # ... (successful save handling) ...
     else
-      #debugger
-      render 'new' # Render the 'new' template again if save fails (with errors)
+      render 'new'
     end
   end
 
-  private # This 'private' keyword is on its own line, at the end of the class
+  def index # <--- ADD THIS ACTION
+    @users = User.all # This will fetch all users from the database
+    # By convention, Rails will then look for app/views/users/index.html.erb to render
+  end
 
-    def user_params # This method is defined at class level, after 'private'
+  private
+    def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end

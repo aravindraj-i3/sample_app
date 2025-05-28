@@ -1,34 +1,28 @@
-@import "bootstrap";
+// app/assets/stylesheets/custom.scss
+
+@import "bootstrap"; // Ensure Bootstrap is correctly imported
 
 /* mixins, variables, etc. */
 
-// --- FIX: Defined all missing variables ---
+// --- Defined all variables used in this file ---
 $gray-medium-light: #eaeaea;
-$gray-light: #777;       // Defined for h2 color, etc. (Adjust value as needed)
-$gray: #555;             // Defined for footer links (Adjust value as needed)
-$gray-darker: #333;      // Defined for footer links hover (Adjust value as needed)
-$state-danger-text: #ca2727; // Adding this in case you use it elsewhere as well
+$gray-light: #777;           // Used in h2 and footer
+$gray: #555;                 // Used in footer links
+$gray-darker: #333;          // Used in footer links hover
+$state-danger-text: #ca2727; // Used in .field_with_errors
+
+// --- Global Mixins ---
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 
 /* universal */
 
-@mixin box_sizing {
-  -moz-box-sizing: border-box;  // FIX: Tightened spacing
-  -webkit-box-sizing: border-box; // FIX: Tightened spacing
-  box-sizing: border-box;       // FIX: Tightened spacing
-} // FIX: Clean closing brace on its own line or with proper spacing
-
-/* miscellaneous */ // FIX: Clean comment block, ideally on its own line
-
-.debug_dump {                  // FIX: Clean selector definition
-  clear: both;                  // FIX: Tightened spacing
-  float: left;                  // FIX: Tightened spacing
-  width: 100%;                  // FIX: Tightened spacing
-  margin-top: 45px;             // FIX: Tightened spacing
-  @include box_sizing;          // This line is correct to include the mixin
-}
-
 body {
-  padding-top: 60px; /* FIX: Removed space from padding- top */
+  padding-top: 60px; // Corrected: no space in padding-top
 }
 
 section {
@@ -42,7 +36,7 @@ textarea {
 .center {
   text-align: center;
   h1 {
-    margin-bottom: 10px; /* FIX: Removed space from 10 px */
+    margin-bottom: 10px; // Corrected: no space in 10px
   }
 }
 
@@ -59,23 +53,23 @@ h6 {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -2px; /* FIX: Removed space from -2 px */
-  margin-bottom: 30px;  /* FIX: Removed space from 30 px */
+  letter-spacing: -2px; // Corrected: no space in -2px
+  margin-bottom: 30px;  // Corrected: no space in 30px
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;      /* FIX: Removed space from 1 .2 em */
-  letter-spacing: -1px;  /* FIX: Removed space from -1 px */
-  margin-bottom: 30px;   /* FIX: Removed space from 30 px */
+  font-size: 1.2em;      // Corrected: no space in 1.2em
+  letter-spacing: -1px;  // Corrected: no space in -1px
+  margin-bottom: 30px;   // Corrected: no space in 30px
   text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
 
 p {
-  font-size: 1.1em;      /* FIX: Removed space from 1 .1 em */
-  line-height: 1.7em;    /* FIX: Removed space from 1 .7 em */
+  font-size: 1.1em;      // Corrected: no space in 1.1em
+  line-height: 1.7em;    // Corrected: no space in 1.7em
 }
 
 
@@ -83,12 +77,12 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;   /* FIX: Removed space from 10 px */
-  font-size: 1.7em;     /* FIX: Removed space from 1 .7 em */
+  margin-right: 10px;   // Corrected: no space in 10px
+  font-size: 1.7em;     // Corrected: no space in 1.7em
   color: white;
   text-transform: uppercase;
-  letter-spacing: -1px; /* FIX: Removed space from -1 px */
-  padding-top: 9px;     /* FIX: Removed space from 9 px */
+  letter-spacing: -1px; // Corrected: no space in -1px
+  padding-top: 9px;     // Corrected: no space in 9px
   font-weight: bold;
   &:hover {
     color: white;
@@ -99,14 +93,14 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;     /* FIX: Removed space from 45 px */
-  padding-top: 5px;     /* FIX: Removed space from 5 px */
-  border-top: 1px solid $gray-medium-light; /* FIX: Removed space from 1 px */
-  color: $gray-light;   /* Uses defined $gray-light */
+  margin-top: 45px;     // Corrected: no space in 45px
+  padding-top: 5px;     // Corrected: no space in 5px
+  border-top: 1px solid $gray-medium-light; // Corrected: no space in 1px
+  color: $gray-light;
   a {
-    color: $gray;       /* Uses defined $gray */
+    color: $gray;
     &:hover {
-      color: $gray-darker; /* Uses defined $gray-darker */
+      color: $gray-darker;
     }
   }
   small {
@@ -117,26 +111,9 @@ footer {
     list-style: none;
     li {
       float: left;
-      margin-left: 15px; /* FIX: Removed space from 15 px */
+      margin-left: 15px; // Corrected: no space in 15px
     }
   }
-}
-
-// Ensure these are at the end if they apply to the entire file
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
 }
 
 /* sidebar */
@@ -172,7 +149,7 @@ aside {
 }
 
 .gravatar {
-  float: left;
+  float: left; // Removed from here if you want it centered as previously discussed
   margin-right: 10px;
 }
 
@@ -198,7 +175,6 @@ input {
 
 #error_explanation {
   color: red;
-
   ul {
     color: red;
     margin: 0 0 30px 0;
@@ -206,68 +182,18 @@ input {
 }
 
 .field_with_errors {
-  // @extend .has-error; // <--- Remove this entire line, or change to /* @extend .has-error; */
+  // Removed problematic line: @extend .has-error;
   .form-control {
     color: $state-danger-text;
   }
 }
 
-.alert-danger {
-  color: #a94442; // Dark red text
-  background-color: #f2dede; // Light red background
-  border-color: #ebccd1; // Red border
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px; // For Bootstrap 3 alert styling
-}
-/*  sidebar  */ 
+/* miscellaneous */
 
-aside  { 
-  section .user_info  { 
-    margin-top :  20 px ; 
-  } 
-  section  { 
-    padding :  10 px  0 ; 
-    margin-top :  20 px ; 
-    & :first-child  { 
-      border :  0 ; 
-      padding-top :  0 ; 
-    } 
-    span  { 
-      display :  block ; 
-      margin-bottom :  3 px ; 
-      line-height :  1 ; 
-    } 
-    h1  { 
-      font-size :  1 .4 em ; 
-      text-align :  left ; 
-      letter-spacing :  -1 px ; 
-      margin-bottom :  3 px ; 
-      margin-top :  0 px ; 
-    } 
-  } 
-} 
-
-.gravatar  { 
-  float :  left ; 
-  margin-right :  10 px ; 
-} 
-
-.gravatar_edit  { 
-  margin-top :  15 px ; 
-}
-
-
-/*  forms  */ 
-
-input ,  textarea ,  select ,  .uneditable-input  { 
-  border :  1 px  solid  #bbb ; 
-  width :  100% ; 
-  margin-bottom :  15 px ; 
-  @include box_sizing ; 
-} 
-
-input  { 
-  height :  auto  !important ; 
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }
