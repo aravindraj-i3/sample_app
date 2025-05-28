@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div class="container d-flex justify-content-between align-items-center py-3"> <%# Added container, flexbox classes %>
+    <small>
+      The <a href="https://railstutorial.jp/"> Ruby on Rails Tutorial </a>
+      by <a href="http://www.michaelhartl.com/"> Michael Hartl </a>
+    </small>
+    <nav>
+      <ul class="list-unstyled d-flex mb-0"> <%# Removed default list styling, made flex, removed bottom margin %>
+        <li class="ms-3"> <%= link_to "About" , '#' %> </li> <%# Added margin-left for spacing %>
+        <li class="ms-3"> <%= link_to "Contact" , '#' %> </li> <%# Added margin-left for spacing %>
+        <li class="ms-3"> <a href="http://news.railstutorial.org/"> News </a></li> <%# Added margin-left for spacing %>
+      </ul>
+    </nav>
+  </div>
+</footer>
